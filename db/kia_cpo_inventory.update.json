@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-06-26T11:12:08.317558+00:00",
+  "scraped_at": "2026-06-26T12:58:18.547842+00:00",
   "total_rows": 18,
   "available_count": 17,
   "sold_out_count": 1,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "329마8113"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "329마8113",
-      "product_id": "11357",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=11357",
-      "price_text": "5,063만원",
-      "first_registered_month": "2024년 03월",
-      "mileage_text": "23,229km",
-      "fuel_label": "하이브리드",
-      "trim_group": "시그니처 그래비티"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
