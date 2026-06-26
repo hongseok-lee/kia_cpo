@@ -558,6 +558,199 @@ def write_outputs(vehicles: list[dict[str, Any]], paths: OutputPaths, target_url
                 )
 
 
+DB_FIELDS = [
+    "plate_number",
+    "status",
+    "product_id",
+    "detail_url",
+    "price_won",
+    "price_text",
+    "model_year",
+    "first_registered_on",
+    "first_registered_month",
+    "mileage_km",
+    "mileage_text",
+    "model_name",
+    "engine",
+    "fuel_type",
+    "fuel_label",
+    "trim_raw",
+    "trim_group",
+    "classification",
+    "option_price_won",
+    "option_price_text",
+    "option_count",
+    "main_option_count",
+    "main_options",
+    "selectable_option_names",
+    "selectable_option_package_count",
+    "selectable_option_detail_total",
+    "selectable_options_json",
+    "first_seen_at",
+    "last_seen_at",
+    "last_scraped_at",
+    "sold_out_at",
+    "seen_count",
+    "missing_count",
+]
+
+
+def read_db(path: Path) -> dict[str, dict[str, str]]:
+    if not path.exists():
+        return {}
+    with path.open(newline="", encoding="utf-8-sig") as file:
+        rows = list(csv.DictReader(file))
+    db: dict[str, dict[str, str]] = {}
+    for row in rows:
+        plate_number = normalize_space(row.get("plate_number"))
+        if plate_number:
+            db[plate_number] = {field: row.get(field, "") for field in DB_FIELDS}
+    return db
+
+
+def int_from_row(row: dict[str, str], key: str) -> int:
+    try:
+        return int(row.get(key) or 0)
+    except ValueError:
+        return 0
+
+
+def vehicle_db_values(vehicle: dict[str, Any]) -> dict[str, str]:
+    return {
+        "plate_number": str(vehicle["plate_number"]),
+        "product_id": str(vehicle["id"]),
+        "detail_url": str(vehicle["detail_url"]),
+        "price_won": str(vehicle["price_won"]),
+        "price_text": str(vehicle["price_text"]),
+        "model_year": str(vehicle["model_year"]),
+        "first_registered_on": str(vehicle["first_registered_on"]),
+        "first_registered_month": str(vehicle["first_registered_month"]),
+        "mileage_km": str(vehicle["mileage_km"]),
+        "mileage_text": str(vehicle["mileage_text"]),
+        "model_name": str(vehicle["model_name"]),
+        "engine": str(vehicle["engine"]),
+        "fuel_type": str(vehicle["fuel_type"]),
+        "fuel_label": str(vehicle["fuel_label"]),
+        "trim_raw": str(vehicle["trim_raw"]),
+        "trim_group": str(vehicle["trim_group"]),
+        "classification": str(vehicle["classification"]),
+        "option_price_won": str(vehicle["option_price_won"]),
+        "option_price_text": str(vehicle["option_price_text"]),
+        "option_count": str(vehicle["option_count"]),
+        "main_option_count": str(vehicle["main_option_count"]),
+        "main_options": "; ".join(vehicle["main_option_names"]),
+        "selectable_option_names": "; ".join(vehicle["selectable_option_names"]),
+        "selectable_option_package_count": str(vehicle["selectable_option_package_count"]),
+        "selectable_option_detail_total": str(vehicle["selectable_option_detail_total"]),
+        "selectable_options_json": json.dumps(vehicle["selectable_options"], ensure_ascii=False),
+    }
+
+
+def update_csv_db(vehicles: list[dict[str, Any]], path: Path, scraped_at: str) -> dict[str, Any]:
+    existing = read_db(path)
+    current_by_plate = {str(vehicle["plate_number"]): vehicle for vehicle in vehicles}
+    rows_by_plate: dict[str, dict[str, str]] = {}
+    added: list[str] = []
+    reappeared: list[str] = []
+    sold_out: list[str] = []
+
+    for plate_number, vehicle in current_by_plate.items():
+        old = existing.get(plate_number, {})
+        row = {field: old.get(field, "") for field in DB_FIELDS}
+        was_sold_out = old.get("status") == "sold_out"
+        row.update(vehicle_db_values(vehicle))
+        row["status"] = "available"
+        row["first_seen_at"] = old.get("first_seen_at") or scraped_at
+        row["last_seen_at"] = scraped_at
+        row["last_scraped_at"] = scraped_at
+        row["sold_out_at"] = ""
+        row["seen_count"] = str(int_from_row(old, "seen_count") + 1)
+        row["missing_count"] = "0"
+        rows_by_plate[plate_number] = row
+        if not old:
+            added.append(plate_number)
+        elif was_sold_out:
+            reappeared.append(plate_number)
+
+    for plate_number, old in existing.items():
+        if plate_number in current_by_plate:
+            continue
+        row = {field: old.get(field, "") for field in DB_FIELDS}
+        row["status"] = "sold_out"
+        row["last_scraped_at"] = scraped_at
+        row["sold_out_at"] = old.get("sold_out_at") or scraped_at
+        row["missing_count"] = str(int_from_row(old, "missing_count") + 1)
+        row["seen_count"] = str(int_from_row(old, "seen_count"))
+        rows_by_plate[plate_number] = row
+        if old.get("status") != "sold_out":
+            sold_out.append(plate_number)
+
+    ordered_rows = sorted(
+        rows_by_plate.values(),
+        key=lambda row: (
+            0 if row["status"] == "available" else 1,
+            row.get("last_seen_at", ""),
+            row["plate_number"],
+        ),
+        reverse=False,
+    )
+    # Keep available rows in the current site order for easier visual comparison.
+    site_order = {plate: index for index, plate in enumerate(current_by_plate)}
+    ordered_rows.sort(
+        key=lambda row: (
+            0 if row["status"] == "available" else 1,
+            site_order.get(row["plate_number"], 10_000),
+            row["plate_number"],
+        )
+    )
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8-sig") as file:
+        writer = csv.DictWriter(file, fieldnames=DB_FIELDS)
+        writer.writeheader()
+        writer.writerows(ordered_rows)
+
+    available_count = sum(1 for row in ordered_rows if row["status"] == "available")
+    sold_out_count = sum(1 for row in ordered_rows if row["status"] == "sold_out")
+    return {
+        "path": str(path),
+        "scraped_at": scraped_at,
+        "total_rows": len(ordered_rows),
+        "available_count": available_count,
+        "sold_out_count": sold_out_count,
+        "added": added,
+        "added_vehicles": [
+            {
+                "plate_number": plate,
+                "product_id": current_by_plate[plate]["id"],
+                "detail_url": current_by_plate[plate]["detail_url"],
+                "price_text": current_by_plate[plate]["price_text"],
+                "first_registered_month": current_by_plate[plate]["first_registered_month"],
+                "mileage_text": current_by_plate[plate]["mileage_text"],
+                "fuel_label": current_by_plate[plate]["fuel_label"],
+                "trim_group": current_by_plate[plate]["trim_group"],
+                "selectable_option_names": current_by_plate[plate]["selectable_option_names"],
+            }
+            for plate in added
+        ],
+        "sold_out": sold_out,
+        "sold_out_vehicles": [
+            {
+                "plate_number": plate,
+                "product_id": rows_by_plate[plate].get("product_id"),
+                "detail_url": rows_by_plate[plate].get("detail_url"),
+                "price_text": rows_by_plate[plate].get("price_text"),
+                "first_registered_month": rows_by_plate[plate].get("first_registered_month"),
+                "mileage_text": rows_by_plate[plate].get("mileage_text"),
+                "fuel_label": rows_by_plate[plate].get("fuel_label"),
+                "trim_group": rows_by_plate[plate].get("trim_group"),
+            }
+            for plate in sold_out
+        ],
+        "reappeared": reappeared,
+    }
+
+
 def verify_with_playwright(
     vehicles: list[dict[str, Any]],
     sample_size: int,
@@ -664,6 +857,18 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--env-file", type=Path, default=Path(".env"))
     parser.add_argument("--headed", action="store_true", help="Show browser during DOM verification.")
     parser.add_argument("--retries", type=positive_int, default=3)
+    parser.add_argument(
+        "--update-db",
+        type=Path,
+        default=None,
+        help="Update a CSV inventory DB keyed by plate_number, marking missing rows sold_out.",
+    )
+    parser.add_argument(
+        "--db-report",
+        type=Path,
+        default=None,
+        help="Write the DB update report JSON. Defaults to <db filename>.update.json when --update-db is used.",
+    )
     return parser.parse_args(argv)
 
 
@@ -672,6 +877,7 @@ def main(argv: list[str]) -> int:
     client = KiaApiClient(retries=args.retries)
     paths = output_paths(args.output_dir, args.prefix)
 
+    scraped_at = datetime.now(timezone.utc).isoformat()
     filter_params = parse_filter_params(args.target_url)
     listings = fetch_listing_rows(client, filter_params, args.limit)
     vehicles: list[dict[str, Any]] = []
@@ -687,6 +893,13 @@ def main(argv: list[str]) -> int:
         )
 
     write_outputs(vehicles, paths, args.target_url)
+    db_report = None
+    if args.update_db:
+        db_report = update_csv_db(vehicles, args.update_db, scraped_at)
+        db_report_path = args.db_report or args.update_db.with_suffix(".update.json")
+        db_report_path.parent.mkdir(parents=True, exist_ok=True)
+        db_report_path.write_text(json.dumps(db_report, ensure_ascii=False, indent=2), encoding="utf-8")
+        db_report["report_path"] = str(db_report_path)
     verify_report = verify_with_playwright(
         vehicles,
         args.verify_dom,
@@ -703,6 +916,13 @@ def main(argv: list[str]) -> int:
     print(f"selectable_packages_csv={paths.selectable_packages_csv_path}")
     print(f"selectable_details_csv={paths.selectable_details_csv_path}")
     print(f"summary={paths.summary_path}")
+    if db_report:
+        print(
+            f"db={db_report['path']} total_rows={db_report['total_rows']} "
+            f"available={db_report['available_count']} sold_out={db_report['sold_out_count']} "
+            f"added={len(db_report['added'])} newly_sold_out={len(db_report['sold_out'])} "
+            f"reappeared={len(db_report['reappeared'])} report={db_report['report_path']}"
+        )
     if verify_report.get("enabled"):
         print(f"verify_ok={verify_report['ok']} verify={paths.verify_path}")
         if not verify_report["ok"]:

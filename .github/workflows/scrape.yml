@@ -8,11 +8,15 @@ on:
         required: false
         default: "0"
   schedule:
-    # 00:10 KST every day.
-    - cron: "10 15 * * *"
+    # Every hour at minute 7.
+    - cron: "7 * * * *"
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: kia-cpo-scrape
+  cancel-in-progress: false
 
 jobs:
   scrape:
@@ -22,6 +26,7 @@ jobs:
       VERIFY_DOM: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_dom || '0' }}
       PLEOS_ID: ${{ secrets.PLEOS_ID }}
       PLEOS_PW: ${{ secrets.PLEOS_PW }}
+      NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
 
     steps:
       - name: Checkout
@@ -55,7 +60,57 @@ jobs:
           } > .env
 
       - name: Scrape listings
-        run: python scrape_kia_cpo.py --verify-dom "$VERIFY_DOM"
+        run: >-
+          python scrape_kia_cpo.py
+          --verify-dom "$VERIFY_DOM"
+          --update-db db/kia_cpo_inventory.csv
+          --db-report db/kia_cpo_inventory.update.json
+
+      - name: Notify when new vehicles are added
+        if: env.NOTIFY_WEBHOOK_URL != ''
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          report_path = "db/kia_cpo_inventory.update.json"
+          with open(report_path, encoding="utf-8") as file:
+              report = json.load(file)
+          if not report.get("added_vehicles"):
+              print("No newly added vehicles; notification skipped.")
+              raise SystemExit(0)
+
+          payload = {
+              "event": "kia_cpo_new_vehicles",
+              "repository": os.environ["GITHUB_REPOSITORY"],
+              "run_id": os.environ["GITHUB_RUN_ID"],
+              "scraped_at": report["scraped_at"],
+              "added_count": len(report["added_vehicles"]),
+              "vehicles": report["added_vehicles"],
+          }
+          request = urllib.request.Request(
+              os.environ["NOTIFY_WEBHOOK_URL"],
+              data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+              headers={"content-type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(request, timeout=20) as response:
+              print(f"Notification sent: HTTP {response.status}")
+          PY
+
+      - name: Commit inventory DB updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add db/kia_cpo_inventory.csv db/kia_cpo_inventory.update.json
+          if git diff --cached --quiet; then
+            echo "No DB changes to commit."
+          else
+            git commit -m "Update Kia CPO inventory [skip ci]"
+            git push
+          fi
 
       - name: Upload scrape outputs
         uses: actions/upload-artifact@v4
@@ -64,4 +119,6 @@ jobs:
           path: |
             data/*.csv
             data/*.json
+            db/*.csv
+            db/*.json
           retention-days: 30
