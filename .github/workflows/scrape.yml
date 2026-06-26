@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: kia-cpo-scrape
@@ -27,6 +28,9 @@ jobs:
       PLEOS_ID: ${{ secrets.PLEOS_ID }}
       PLEOS_PW: ${{ secrets.PLEOS_PW }}
       NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+      TS_OAUTH_CLIENT_ID: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+      TS_OAUTH_SECRET: ${{ secrets.TS_OAUTH_SECRET }}
+      TS_TAGS: ${{ vars.TS_TAGS || 'tag:github-actions' }}
 
     steps:
       - name: Checkout
@@ -39,6 +43,14 @@ jobs:
 
       - name: Validate Python syntax
         run: python -m compileall scrape_kia_cpo.py
+
+      - name: Connect to Tailscale
+        if: env.TS_OAUTH_CLIENT_ID != '' && env.TS_OAUTH_SECRET != ''
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: ${{ env.TS_TAGS }}
 
       - name: Install Playwright for DOM verification
         if: env.VERIFY_DOM != '0'

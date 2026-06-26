@@ -80,3 +80,24 @@ python3 scrape_kia_cpo.py --target-url 'https://cpo.kia.com/products/?filter=...
 ```
 
 iMessage로 직접 받으려면 GitHub-hosted Actions가 아니라, 이 webhook을 받아 Apple Messages 앱으로 전송하는 Mac 브릿지 또는 macOS self-hosted runner가 필요합니다.
+
+### Optional Tailscale Access
+
+GitHub-hosted runner도 Tailscale에 ephemeral node로 붙을 수 있습니다. Private network 안의 webhook이나 Mac iMessage 브릿지에 접근해야 한다면 Tailscale admin console에서 OAuth client를 만들고 repository secrets를 등록합니다.
+
+Required Tailscale setup:
+
+- Tailnet ACL에 `tag:github-actions` 같은 태그 생성
+- OAuth client 생성, `auth_keys` write scope 부여
+- OAuth client가 위 태그를 사용할 수 있게 설정
+
+Repository secrets:
+
+- `TS_OAUTH_CLIENT_ID`
+- `TS_OAUTH_SECRET`
+
+Optional repository variable:
+
+- `TS_TAGS`: 기본값은 `tag:github-actions`
+
+이 secrets가 있으면 workflow의 `Connect to Tailscale` 단계가 실행되고, 이후 단계에서 tailnet 내부 주소에 접근할 수 있습니다. iMessage 알림은 `NOTIFY_WEBHOOK_URL`을 tailnet 내부 Mac 브릿지 URL로 설정하는 방식으로 연결합니다.
