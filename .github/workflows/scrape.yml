@@ -1,0 +1,67 @@
+name: Scrape Kia CPO
+
+on:
+  workflow_dispatch:
+    inputs:
+      verify_dom:
+        description: "Number of rows to verify with Playwright DOM checks. Requires PLEOS_ID and PLEOS_PW repository secrets."
+        required: false
+        default: "0"
+  schedule:
+    # 00:10 KST every day.
+    - cron: "10 15 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      VERIFY_DOM: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_dom || '0' }}
+      PLEOS_ID: ${{ secrets.PLEOS_ID }}
+      PLEOS_PW: ${{ secrets.PLEOS_PW }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Python syntax
+        run: python -m compileall scrape_kia_cpo.py
+
+      - name: Install Playwright for DOM verification
+        if: env.VERIFY_DOM != '0'
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Prepare env file for DOM verification
+        if: env.VERIFY_DOM != '0'
+        run: |
+          if [ -z "$PLEOS_ID" ] || [ -z "$PLEOS_PW" ]; then
+            echo "::error::PLEOS_ID and PLEOS_PW repository secrets are required when verify_dom is non-zero."
+            exit 1
+          fi
+          {
+            printf 'PLEOS_ID=%s\n' "$PLEOS_ID"
+            printf 'PLEOS_PW=%s\n' "$PLEOS_PW"
+          } > .env
+
+      - name: Scrape listings
+        run: python scrape_kia_cpo.py --verify-dom "$VERIFY_DOM"
+
+      - name: Upload scrape outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: kia-cpo-scrape-${{ github.run_id }}
+          path: |
+            data/*.csv
+            data/*.json
+          retention-days: 30
