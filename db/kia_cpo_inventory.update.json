@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-06-27T07:19:59.451611+00:00",
+  "scraped_at": "2026-06-27T09:06:14.377639+00:00",
   "total_rows": 18,
   "available_count": 16,
   "sold_out_count": 2,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "166다2586"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "166다2586",
-      "product_id": "12291",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12291",
-      "price_text": "3,490만원",
-      "first_registered_month": "2023년 05월",
-      "mileage_text": "23,403km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
