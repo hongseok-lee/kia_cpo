@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.hongseok.kia-cpo-imessage</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/seoulite/kia-cpo-imessage/kia_cpo_imessage_bridge.py</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/Users/seoulite/kia-cpo-imessage</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>KIA_CPO_BRIDGE_PORT</key>
+    <string>8787</string>
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/seoulite/Library/Logs/kia-cpo-imessage.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/seoulite/Library/Logs/kia-cpo-imessage.stderr.log</string>
+</dict>
+</plist>
