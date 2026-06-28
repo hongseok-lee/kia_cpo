@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -34,6 +35,7 @@ PORT = int(os.environ.get("KIA_CPO_BRIDGE_PORT", "8787"))
 TOKEN = os.environ.get("KIA_CPO_WEBHOOK_TOKEN", "")
 RECIPIENT = os.environ.get("IMESSAGE_RECIPIENT", "")
 LOG_PATH = Path(os.environ.get("KIA_CPO_BRIDGE_LOG", str(Path.home() / "Library/Logs/kia-cpo-imessage.log")))
+TOKEN_PATTERN = re.compile(r"token=[^&\s\"]+")
 
 
 def log(message: str) -> None:
@@ -41,6 +43,10 @@ def log(message: str) -> None:
     now = datetime.now(timezone.utc).isoformat()
     with LOG_PATH.open("a", encoding="utf-8") as file:
         file.write(f"{now} {message}\n")
+
+
+def redact_secrets(message: str) -> str:
+    return TOKEN_PATTERN.sub("token=<redacted>", message)
 
 
 def format_message(payload: dict) -> str:
@@ -102,7 +108,7 @@ class Handler(BaseHTTPRequestHandler):
     server_version = "KiaCPOiMessageBridge/1.0"
 
     def log_message(self, fmt: str, *args) -> None:  # noqa: N802 - stdlib API
-        log(f"{self.address_string()} {fmt % args}")
+        log(redact_secrets(f"{self.address_string()} {fmt % args}"))
 
     def respond(self, status: int, body: dict) -> None:
         encoded = json.dumps(body, ensure_ascii=False).encode("utf-8")
