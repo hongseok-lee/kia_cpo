@@ -8,8 +8,8 @@ on:
         required: false
         default: "0"
   schedule:
-    # Every 30 minutes, offset from the top of the hour.
-    - cron: "7,37 * * * *"
+    # Every 15 minutes, offset from the top of the hour.
+    - cron: "7,22,37,52 * * * *"
 
 permissions:
   contents: write
