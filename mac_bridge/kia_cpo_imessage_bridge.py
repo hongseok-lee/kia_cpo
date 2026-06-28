@@ -81,14 +81,21 @@ def send_imessage(message: str) -> None:
     on run argv
       set targetBuddy to item 1 of argv
       set targetMessage to item 2 of argv
+
+      tell application "Messages" to launch
+
       tell application "Messages"
         set targetService to 1st service whose service type = iMessage
         set targetHandle to buddy targetBuddy of targetService
         send targetMessage to targetHandle
       end tell
+
+      try
+        tell application "System Events" to set visible of process "Messages" to false
+      end try
     end run
     """
-    subprocess.run(["osascript", "-e", script, RECIPIENT, message], check=True)
+    subprocess.run(["osascript", "-e", script, RECIPIENT, message], check=True, timeout=20)
 
 
 class Handler(BaseHTTPRequestHandler):

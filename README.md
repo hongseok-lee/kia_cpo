@@ -81,6 +81,8 @@ python3 scrape_kia_cpo.py --target-url 'https://cpo.kia.com/products/?filter=...
 
 iMessage로 직접 받으려면 GitHub-hosted Actions가 아니라, 이 webhook을 받아 Apple Messages 앱으로 전송하는 Mac 브릿지 또는 macOS self-hosted runner가 필요합니다.
 
+On the Mac bridge host, macOS might require Automation permission before Python/osascript can control Messages.app. If message sending times out, open Messages once and allow the prompt in System Settings > Privacy & Security > Automation. The bridge uses AppleScript `launch`, not `activate`, so notifications are sent without intentionally bringing the Messages window to the foreground.
+
 ### Optional Tailscale Access
 
 GitHub-hosted runner도 Tailscale에 ephemeral node로 붙을 수 있습니다. Private network 안의 webhook이나 Mac iMessage 브릿지에 접근해야 한다면 Tailscale admin console에서 OAuth client를 만들고 repository secrets를 등록합니다.
