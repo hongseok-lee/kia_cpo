@@ -121,7 +121,11 @@ jobs:
             echo "No DB changes to commit."
           else
             git commit -m "Update Kia CPO inventory [skip ci]"
-            git push
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push || {
+              git pull --rebase origin "$GITHUB_REF_NAME"
+              git push
+            }
           fi
 
       - name: Upload scrape outputs
