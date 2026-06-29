@@ -1,66 +1,24 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-06-29T09:04:59.156954+00:00",
+  "scraped_at": "2026-06-29T10:50:09.709951+00:00",
   "total_rows": 20,
-  "available_count": 19,
-  "sold_out_count": 1,
-  "added": [
-    "108부9146",
-    "224부2605"
-  ],
-  "added_vehicles": [
-    {
-      "plate_number": "108부9146",
-      "product_id": 12682,
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12682",
-      "price_text": "4,360만원",
-      "first_registered_month": "2024년 06월",
-      "mileage_text": "16,095km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처 그래비티",
-      "selectable_option_names": [
-        "컴포트",
-        "듀얼선루프",
-        "드라이브와이즈",
-        "HUD+빌트인캠2",
-        "KRELL사운드",
-        "모니터링팩",
-        "스마트커넥트"
-      ]
-    },
-    {
-      "plate_number": "224부2605",
-      "product_id": 12681,
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12681",
-      "price_text": "4,320만원",
-      "first_registered_month": "2024년 04월",
-      "mileage_text": "26,473km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처 그래비티",
-      "selectable_option_names": [
-        "컴포트",
-        "듀얼선루프",
-        "드라이브와이즈",
-        "HUD+빌트인캠2",
-        "KRELL사운드",
-        "모니터링팩",
-        "스마트커넥트"
-      ]
-    }
-  ],
+  "available_count": 18,
+  "sold_out_count": 2,
+  "added": [],
+  "added_vehicles": [],
   "sold_out": [
-    "166다2586"
+    "311누4173"
   ],
   "sold_out_vehicles": [
     {
-      "plate_number": "166다2586",
-      "product_id": "12291",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12291",
-      "price_text": "3,490만원",
-      "first_registered_month": "2023년 05월",
-      "mileage_text": "23,403km",
+      "plate_number": "311누4173",
+      "product_id": "10543",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=10543",
+      "price_text": "4,518만원",
+      "first_registered_month": "2023년 12월",
+      "mileage_text": "21,437km",
       "fuel_label": "가솔린",
-      "trim_group": "시그니처"
+      "trim_group": "시그니처 그래비티"
     }
   ],
   "reappeared": []
