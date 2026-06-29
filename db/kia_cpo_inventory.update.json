@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-06-29T10:50:09.709951+00:00",
+  "scraped_at": "2026-06-29T12:27:57.555845+00:00",
   "total_rows": 20,
   "available_count": 18,
   "sold_out_count": 2,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "311누4173"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "311누4173",
-      "product_id": "10543",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=10543",
-      "price_text": "4,518만원",
-      "first_registered_month": "2023년 12월",
-      "mileage_text": "21,437km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처 그래비티"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
