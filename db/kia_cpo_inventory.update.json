@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-06-30T03:37:36.393250+00:00",
+  "scraped_at": "2026-06-30T05:16:45.797871+00:00",
   "total_rows": 20,
   "available_count": 17,
   "sold_out_count": 3,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "179거2432"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "179거2432",
-      "product_id": "12428",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12428",
-      "price_text": "3,675만원",
-      "first_registered_month": "2024년 11월",
-      "mileage_text": "25,024km",
-      "fuel_label": "가솔린",
-      "trim_group": "노블레스"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
