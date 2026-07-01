@@ -1,33 +1,11 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-07-01T08:42:41.446040+00:00",
+  "scraped_at": "2026-07-01T10:14:59.994345+00:00",
   "total_rows": 21,
   "available_count": 17,
   "sold_out_count": 4,
-  "added": [
-    "222라1359"
-  ],
-  "added_vehicles": [
-    {
-      "plate_number": "222라1359",
-      "product_id": 12734,
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12734",
-      "price_text": "4,530만원",
-      "first_registered_month": "2025년 01월",
-      "mileage_text": "3,379km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처 그래비티",
-      "selectable_option_names": [
-        "컴포트",
-        "듀얼선루프",
-        "드라이브와이즈",
-        "HUD+빌트인캠2",
-        "KRELL사운드",
-        "모니터링팩",
-        "스마트커넥트"
-      ]
-    }
-  ],
+  "added": [],
+  "added_vehicles": [],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
