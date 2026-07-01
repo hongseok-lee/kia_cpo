@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-07-01T05:44:55.502408+00:00",
+  "scraped_at": "2026-07-01T07:18:33.646656+00:00",
   "total_rows": 20,
-  "available_count": 17,
-  "sold_out_count": 3,
+  "available_count": 16,
+  "sold_out_count": 4,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "380두1389"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "380두1389",
+      "product_id": "12459",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=12459",
+      "price_text": "4,499만원",
+      "first_registered_month": "2024년 05월",
+      "mileage_text": "35,135km",
+      "fuel_label": "하이브리드",
+      "trim_group": "시그니처"
+    }
+  ],
   "reappeared": []
 }
