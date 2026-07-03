@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-07-03T07:43:43.139664+00:00",
+  "scraped_at": "2026-07-03T10:22:32.608956+00:00",
   "total_rows": 21,
-  "available_count": 17,
-  "sold_out_count": 4,
+  "available_count": 16,
+  "sold_out_count": 5,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "102조3551"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "102조3551",
+      "product_id": "12318",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=12318",
+      "price_text": "3,250만원",
+      "first_registered_month": "2023년 08월",
+      "mileage_text": "34,667km",
+      "fuel_label": "가솔린",
+      "trim_group": "노블레스"
+    }
+  ],
   "reappeared": []
 }
