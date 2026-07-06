@@ -1,6 +1,6 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-07-06T02:56:12.610651+00:00",
+  "scraped_at": "2026-07-06T07:20:52.518760+00:00",
   "total_rows": 21,
   "available_count": 17,
   "sold_out_count": 4,
@@ -8,7 +8,5 @@
   "added_vehicles": [],
   "sold_out": [],
   "sold_out_vehicles": [],
-  "reappeared": [
-    "102조3551"
-  ]
+  "reappeared": []
 }
