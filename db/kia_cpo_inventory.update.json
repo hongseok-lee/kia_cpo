@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-08-21T09:04:25.452149+00:00",
+  "scraped_at": "2026-08-21T09:50:30.587881+00:00",
   "total_rows": 27,
-  "available_count": 19,
-  "sold_out_count": 8,
+  "available_count": 18,
+  "sold_out_count": 9,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "193오3086"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "193오3086",
+      "product_id": "12208",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=12208",
+      "price_text": "4,604만원",
+      "first_registered_month": "2024년 04월",
+      "mileage_text": "50,743km",
+      "fuel_label": "하이브리드",
+      "trim_group": "시그니처 그래비티"
+    }
+  ],
   "reappeared": []
 }
