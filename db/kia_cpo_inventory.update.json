@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-08-23T08:53:17.299426+00:00",
+  "scraped_at": "2026-08-23T09:38:11.391319+00:00",
   "total_rows": 27,
   "available_count": 17,
   "sold_out_count": 10,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "178보3681"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "178보3681",
-      "product_id": "13429",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=13429",
-      "price_text": "4,660만원",
-      "first_registered_month": "2024년 06월",
-      "mileage_text": "31,697km",
-      "fuel_label": "하이브리드",
-      "trim_group": "시그니처 그래비티"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
