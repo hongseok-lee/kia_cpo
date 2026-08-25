@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-08-25T08:55:53.844912+00:00",
+  "scraped_at": "2026-08-25T09:48:12.205790+00:00",
   "total_rows": 27,
   "available_count": 16,
   "sold_out_count": 11,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "278보5751"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "278보5751",
-      "product_id": "12275",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12275",
-      "price_text": "4,508만원",
-      "first_registered_month": "2024년 12월",
-      "mileage_text": "63,315km",
-      "fuel_label": "하이브리드",
-      "trim_group": "시그니처"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
