@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-08-26T05:03:59.220325+00:00",
+  "scraped_at": "2026-08-26T05:47:40.931350+00:00",
   "total_rows": 27,
-  "available_count": 16,
-  "sold_out_count": 11,
+  "available_count": 15,
+  "sold_out_count": 12,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "164라3007"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "164라3007",
+      "product_id": "10117",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=10117",
+      "price_text": "4,743만원",
+      "first_registered_month": "2024년 01월",
+      "mileage_text": "16,516km",
+      "fuel_label": "가솔린",
+      "trim_group": "시그니처 그래비티"
+    }
+  ],
   "reappeared": []
 }
