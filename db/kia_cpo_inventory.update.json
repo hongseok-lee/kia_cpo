@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-08-26T06:23:06.049845+00:00",
+  "scraped_at": "2026-08-26T07:29:15.758505+00:00",
   "total_rows": 27,
   "available_count": 14,
   "sold_out_count": 13,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "134구9508"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "134구9508",
-      "product_id": "12012",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12012",
-      "price_text": "3,301만원",
-      "first_registered_month": "2021년 07월",
-      "mileage_text": "15,732km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
