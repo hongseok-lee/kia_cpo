@@ -1,27 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-08-28T11:17:44.672343+00:00",
+  "scraped_at": "2026-08-28T21:27:16.323506+00:00",
   "total_rows": 28,
   "available_count": 14,
   "sold_out_count": 14,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "388모3745"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "388모3745",
-      "product_id": "12121",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12121",
-      "price_text": "4,196만원",
-      "first_registered_month": "2024년 01월",
-      "mileage_text": "69,356km",
-      "fuel_label": "하이브리드",
-      "trim_group": "시그니처"
-    }
-  ],
-  "reappeared": [
-    "176모9762"
-  ]
+  "sold_out": [],
+  "sold_out_vehicles": [],
+  "reappeared": []
 }
