@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-08-27T14:37:07.196706+00:00",
+  "scraped_at": "2026-08-28T00:00:15.257896+00:00",
   "total_rows": 28,
-  "available_count": 15,
-  "sold_out_count": 13,
+  "available_count": 14,
+  "sold_out_count": 14,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "176모9762"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "176모9762",
+      "product_id": "13465",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=13465",
+      "price_text": "3,265만원",
+      "first_registered_month": "2022년 05월",
+      "mileage_text": "37,938km",
+      "fuel_label": "가솔린",
+      "trim_group": "노블레스"
+    }
+  ],
   "reappeared": []
 }
