@@ -1,11 +1,53 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-09-03T11:41:37.182450+00:00",
-  "total_rows": 30,
-  "available_count": 16,
+  "scraped_at": "2026-09-03T15:15:13.148149+00:00",
+  "total_rows": 32,
+  "available_count": 18,
   "sold_out_count": 14,
-  "added": [],
-  "added_vehicles": [],
+  "added": [
+    "282조9130",
+    "282조9176"
+  ],
+  "added_vehicles": [
+    {
+      "plate_number": "282조9130",
+      "product_id": 13961,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=13961",
+      "price_text": "5,508만원",
+      "first_registered_month": "2025년 09월",
+      "mileage_text": "2,304km",
+      "fuel_label": "하이브리드",
+      "trim_group": "X-Line",
+      "selectable_option_names": [
+        "BOSE사운드",
+        "컴포트",
+        "듀얼선루프",
+        "드라이브와이즈",
+        "HUD+빌트인캠2",
+        "모니터링팩",
+        "스마트커넥트"
+      ]
+    },
+    {
+      "plate_number": "282조9176",
+      "product_id": 13960,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=13960",
+      "price_text": "5,480만원",
+      "first_registered_month": "2025년 09월",
+      "mileage_text": "6,390km",
+      "fuel_label": "하이브리드",
+      "trim_group": "X-Line",
+      "selectable_option_names": [
+        "BOSE사운드",
+        "컴포트",
+        "듀얼선루프",
+        "드라이브와이즈",
+        "HUD+빌트인캠2",
+        "모니터링팩",
+        "스마트커넥트"
+      ]
+    }
+  ],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
