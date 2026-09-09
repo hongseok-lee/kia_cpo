@@ -1,47 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-09-09T11:59:02.189729+00:00",
+  "scraped_at": "2026-09-09T16:34:04.771380+00:00",
   "total_rows": 38,
   "available_count": 22,
   "sold_out_count": 16,
-  "added": [
-    "238러7723"
-  ],
-  "added_vehicles": [
-    {
-      "plate_number": "238러7723",
-      "product_id": 14082,
-      "detail_url": "https://cpo.kia.com/products/detail/?id=14082",
-      "price_text": "5,480만원",
-      "first_registered_month": "2025년 09월",
-      "mileage_text": "3,779km",
-      "fuel_label": "하이브리드",
-      "trim_group": "X-Line",
-      "selectable_option_names": [
-        "BOSE사운드",
-        "컴포트",
-        "듀얼선루프",
-        "드라이브와이즈",
-        "HUD+빌트인캠2",
-        "모니터링팩",
-        "스마트커넥트"
-      ]
-    }
-  ],
-  "sold_out": [
-    "183우3075"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "183우3075",
-      "product_id": "12323",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12323",
-      "price_text": "2,934만원",
-      "first_registered_month": "2021년 08월",
-      "mileage_text": "73,483km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처"
-    }
-  ],
+  "added": [],
+  "added_vehicles": [],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
