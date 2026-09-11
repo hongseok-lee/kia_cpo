@@ -1,47 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-09-11T09:51:16.573739+00:00",
+  "scraped_at": "2026-09-11T14:01:08.409216+00:00",
   "total_rows": 38,
   "available_count": 17,
   "sold_out_count": 21,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "108부9146",
-    "192구8030",
-    "102조3551"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "108부9146",
-      "product_id": "12682",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12682",
-      "price_text": "4,360만원",
-      "first_registered_month": "2024년 06월",
-      "mileage_text": "16,095km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처 그래비티"
-    },
-    {
-      "plate_number": "192구8030",
-      "product_id": "12579",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12579",
-      "price_text": "4,131만원",
-      "first_registered_month": "2023년 12월",
-      "mileage_text": "28,071km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처 그래비티"
-    },
-    {
-      "plate_number": "102조3551",
-      "product_id": "12318",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=12318",
-      "price_text": "3,199만원",
-      "first_registered_month": "2023년 08월",
-      "mileage_text": "34,667km",
-      "fuel_label": "가솔린",
-      "trim_group": "노블레스"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
