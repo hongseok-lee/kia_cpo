@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-09-11T00:32:51.380009+00:00",
+  "scraped_at": "2026-09-11T05:13:05.815997+00:00",
   "total_rows": 38,
-  "available_count": 21,
-  "sold_out_count": 17,
+  "available_count": 20,
+  "sold_out_count": 18,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "139오8063"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "139오8063",
+      "product_id": "13918",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=13918",
+      "price_text": "4,960만원",
+      "first_registered_month": "2024년 08월",
+      "mileage_text": "18,528km",
+      "fuel_label": "하이브리드",
+      "trim_group": "시그니처 그래비티"
+    }
+  ],
   "reappeared": []
 }
