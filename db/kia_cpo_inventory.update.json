@@ -1,25 +1,34 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-09-18T01:37:50.495520+00:00",
-  "total_rows": 39,
-  "available_count": 17,
+  "scraped_at": "2026-09-18T06:43:20.980326+00:00",
+  "total_rows": 40,
+  "available_count": 18,
   "sold_out_count": 22,
-  "added": [],
-  "added_vehicles": [],
-  "sold_out": [
-    "153조9315"
+  "added": [
+    "326어7914"
   ],
-  "sold_out_vehicles": [
+  "added_vehicles": [
     {
-      "plate_number": "153조9315",
-      "product_id": "13203",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=13203",
-      "price_text": "4,625만원",
-      "first_registered_month": "2024년 05월",
-      "mileage_text": "16,695km",
+      "plate_number": "326어7914",
+      "product_id": 14253,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14253",
+      "price_text": "4,650만원",
+      "first_registered_month": "2024년 08월",
+      "mileage_text": "40,312km",
       "fuel_label": "하이브리드",
-      "trim_group": "시그니처"
+      "trim_group": "시그니처 그래비티",
+      "selectable_option_names": [
+        "컴포트",
+        "듀얼선루프",
+        "드라이브와이즈",
+        "HUD+빌트인캠2",
+        "KRELL사운드",
+        "모니터링팩",
+        "스마트커넥트"
+      ]
     }
   ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
