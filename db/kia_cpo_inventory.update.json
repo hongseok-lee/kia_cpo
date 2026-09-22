@@ -1,32 +1,11 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-09-22T12:07:16.538047+00:00",
+  "scraped_at": "2026-09-22T17:04:38.259750+00:00",
   "total_rows": 41,
   "available_count": 19,
   "sold_out_count": 22,
-  "added": [
-    "296러1913"
-  ],
-  "added_vehicles": [
-    {
-      "plate_number": "296러1913",
-      "product_id": 14329,
-      "detail_url": "https://cpo.kia.com/products/detail/?id=14329",
-      "price_text": "4,850만원",
-      "first_registered_month": "2024년 03월",
-      "mileage_text": "24,104km",
-      "fuel_label": "하이브리드",
-      "trim_group": "시그니처 그래비티",
-      "selectable_option_names": [
-        "듀얼선루프",
-        "드라이브와이즈",
-        "HUD+빌트인캠2",
-        "KRELL사운드",
-        "모니터링팩",
-        "스마트커넥트"
-      ]
-    }
-  ],
+  "added": [],
+  "added_vehicles": [],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
