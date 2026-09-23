@@ -1,11 +1,34 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-09-23T06:37:27.698847+00:00",
-  "total_rows": 41,
-  "available_count": 19,
+  "scraped_at": "2026-09-23T12:20:12.173343+00:00",
+  "total_rows": 42,
+  "available_count": 20,
   "sold_out_count": 22,
-  "added": [],
-  "added_vehicles": [],
+  "added": [
+    "322누8710"
+  ],
+  "added_vehicles": [
+    {
+      "plate_number": "322누8710",
+      "product_id": 14351,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14351",
+      "price_text": "4,245만원",
+      "first_registered_month": "2024년 02월",
+      "mileage_text": "57,107km",
+      "fuel_label": "하이브리드",
+      "trim_group": "시그니처",
+      "selectable_option_names": [
+        "컴포트",
+        "듀얼선루프",
+        "드라이브와이즈",
+        "HUD+빌트인캠2",
+        "KRELL사운드",
+        "모니터링팩",
+        "스마트커넥트",
+        "스타일"
+      ]
+    }
+  ],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
