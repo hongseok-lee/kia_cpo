@@ -1,11 +1,29 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-01T00:12:30.804172+00:00",
-  "total_rows": 44,
-  "available_count": 21,
+  "scraped_at": "2026-10-01T06:10:43.551813+00:00",
+  "total_rows": 45,
+  "available_count": 22,
   "sold_out_count": 23,
-  "added": [],
-  "added_vehicles": [],
+  "added": [
+    "397로4038"
+  ],
+  "added_vehicles": [
+    {
+      "plate_number": "397로4038",
+      "product_id": 14472,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14472",
+      "price_text": "3,667만원",
+      "first_registered_month": "2024년 07월",
+      "mileage_text": "34,296km",
+      "fuel_label": "가솔린",
+      "trim_group": "시그니처 그래비티",
+      "selectable_option_names": [
+        "듀얼선루프",
+        "HUD+빌트인캠2",
+        "모니터링팩"
+      ]
+    }
+  ],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
