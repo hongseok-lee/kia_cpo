@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-01T13:34:03.259933+00:00",
+  "scraped_at": "2026-10-01T19:01:16.684512+00:00",
   "total_rows": 45,
   "available_count": 21,
   "sold_out_count": 24,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "377나5943"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "377나5943",
-      "product_id": "13306",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=13306",
-      "price_text": "4,392만원",
-      "first_registered_month": "2024년 02월",
-      "mileage_text": "46,951km",
-      "fuel_label": "하이브리드",
-      "trim_group": "시그니처"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
