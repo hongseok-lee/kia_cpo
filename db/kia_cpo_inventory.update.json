@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-02T02:19:39.691094+00:00",
+  "scraped_at": "2026-10-02T08:45:04.280118+00:00",
   "total_rows": 45,
-  "available_count": 21,
-  "sold_out_count": 24,
+  "available_count": 20,
+  "sold_out_count": 25,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "238러7749"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "238러7749",
+      "product_id": "13976",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=13976",
+      "price_text": "5,217만원",
+      "first_registered_month": "2025년 09월",
+      "mileage_text": "6,297km",
+      "fuel_label": "하이브리드",
+      "trim_group": "X-Line"
+    }
+  ],
   "reappeared": []
 }
