@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-05T22:46:48.405141+00:00",
+  "scraped_at": "2026-10-06T02:33:02.864094+00:00",
   "total_rows": 45,
-  "available_count": 19,
-  "sold_out_count": 26,
+  "available_count": 18,
+  "sold_out_count": 27,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "329루7179"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "329루7179",
+      "product_id": "13355",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=13355",
+      "price_text": "4,379만원",
+      "first_registered_month": "2024년 01월",
+      "mileage_text": "53,322km",
+      "fuel_label": "하이브리드",
+      "trim_group": "시그니처"
+    }
+  ],
   "reappeared": []
 }
