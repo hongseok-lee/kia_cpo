@@ -1,22 +1,22 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-15T05:51:38.793566+00:00",
-  "total_rows": 52,
-  "available_count": 24,
+  "scraped_at": "2026-10-15T10:50:03.875830+00:00",
+  "total_rows": 53,
+  "available_count": 25,
   "sold_out_count": 28,
   "added": [
-    "128라7151"
+    "244두9556"
   ],
   "added_vehicles": [
     {
-      "plate_number": "128라7151",
-      "product_id": 14741,
-      "detail_url": "https://cpo.kia.com/products/detail/?id=14741",
-      "price_text": "4,504만원",
-      "first_registered_month": "2024년 02월",
-      "mileage_text": "31,540km",
+      "plate_number": "244두9556",
+      "product_id": 14785,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14785",
+      "price_text": "4,980만원",
+      "first_registered_month": "2024년 10월",
+      "mileage_text": "19,956km",
       "fuel_label": "하이브리드",
-      "trim_group": "시그니처 그래비티",
+      "trim_group": "시그니처",
       "selectable_option_names": [
         "컴포트",
         "듀얼선루프",
@@ -24,7 +24,8 @@
         "HUD+빌트인캠2",
         "KRELL사운드",
         "모니터링팩",
-        "스마트커넥트"
+        "스마트커넥트",
+        "스타일"
       ]
     }
   ],
