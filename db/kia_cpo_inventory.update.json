@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-16T05:10:33.019514+00:00",
+  "scraped_at": "2026-10-16T09:57:15.853827+00:00",
   "total_rows": 53,
   "available_count": 24,
   "sold_out_count": 29,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "397로4038"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "397로4038",
-      "product_id": "14472",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=14472",
-      "price_text": "3,667만원",
-      "first_registered_month": "2024년 07월",
-      "mileage_text": "34,296km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처 그래비티"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
