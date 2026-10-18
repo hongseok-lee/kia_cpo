@@ -1,25 +1,14 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-17T23:04:26.948553+00:00",
+  "scraped_at": "2026-10-18T00:59:41.244199+00:00",
   "total_rows": 53,
-  "available_count": 23,
-  "sold_out_count": 30,
+  "available_count": 24,
+  "sold_out_count": 29,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
+  "sold_out": [],
+  "sold_out_vehicles": [],
+  "reappeared": [
     "187부7059"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "187부7059",
-      "product_id": "11725",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=11725",
-      "price_text": "2,956만원",
-      "first_registered_month": "2022년 11월",
-      "mileage_text": "20,913km",
-      "fuel_label": "가솔린",
-      "trim_group": "노블레스"
-    }
-  ],
-  "reappeared": []
+  ]
 }
