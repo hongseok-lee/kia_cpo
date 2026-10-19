@@ -1,36 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-19T08:45:12.936436+00:00",
+  "scraped_at": "2026-10-19T15:54:14.219449+00:00",
   "total_rows": 53,
   "available_count": 22,
   "sold_out_count": 31,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "329루7179",
-    "396나2069"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "329루7179",
-      "product_id": "13355",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=13355",
-      "price_text": "4,379만원",
-      "first_registered_month": "2024년 01월",
-      "mileage_text": "53,322km",
-      "fuel_label": "하이브리드",
-      "trim_group": "시그니처"
-    },
-    {
-      "plate_number": "396나2069",
-      "product_id": "13296",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=13296",
-      "price_text": "4,040만원",
-      "first_registered_month": "2024년 07월",
-      "mileage_text": "20,496km",
-      "fuel_label": "가솔린",
-      "trim_group": "시그니처"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
