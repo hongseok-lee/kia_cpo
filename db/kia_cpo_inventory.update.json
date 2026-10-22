@@ -1,11 +1,32 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-22T01:48:42.934763+00:00",
-  "total_rows": 55,
-  "available_count": 24,
+  "scraped_at": "2026-10-22T06:47:40.984704+00:00",
+  "total_rows": 56,
+  "available_count": 25,
   "sold_out_count": 31,
-  "added": [],
-  "added_vehicles": [],
+  "added": [
+    "231라7156"
+  ],
+  "added_vehicles": [
+    {
+      "plate_number": "231라7156",
+      "product_id": 14927,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14927",
+      "price_text": "4,890만원",
+      "first_registered_month": "2025년 07월",
+      "mileage_text": "38,325km",
+      "fuel_label": "하이브리드",
+      "trim_group": "시그니처 그래비티",
+      "selectable_option_names": [
+        "듀얼선루프",
+        "드라이브와이즈",
+        "HUD+빌트인캠2",
+        "KRELL사운드",
+        "모니터링팩",
+        "스마트커넥트"
+      ]
+    }
+  ],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
