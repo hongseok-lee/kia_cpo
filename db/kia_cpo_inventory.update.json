@@ -1,11 +1,33 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-26T05:01:03.107847+00:00",
-  "total_rows": 56,
-  "available_count": 24,
+  "scraped_at": "2026-10-26T11:00:37.690978+00:00",
+  "total_rows": 57,
+  "available_count": 25,
   "sold_out_count": 32,
-  "added": [],
-  "added_vehicles": [],
+  "added": [
+    "370다9553"
+  ],
+  "added_vehicles": [
+    {
+      "plate_number": "370다9553",
+      "product_id": 14986,
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14986",
+      "price_text": "2,940만원",
+      "first_registered_month": "2023년 06월",
+      "mileage_text": "45,232km",
+      "fuel_label": "가솔린",
+      "trim_group": "시그니처",
+      "selectable_option_names": [
+        "듀얼선루프",
+        "드라이브와이즈",
+        "KRELL사운드",
+        "모니터링팩",
+        "원격주차보조",
+        "스마트커넥트",
+        "스타일"
+      ]
+    }
+  ],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
