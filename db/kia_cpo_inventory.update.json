@@ -1,32 +1,11 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-28T07:33:20.320137+00:00",
+  "scraped_at": "2026-10-28T14:28:53.658461+00:00",
   "total_rows": 58,
   "available_count": 25,
   "sold_out_count": 33,
-  "added": [
-    "216마8250"
-  ],
-  "added_vehicles": [
-    {
-      "plate_number": "216마8250",
-      "product_id": 15041,
-      "detail_url": "https://cpo.kia.com/products/detail/?id=15041",
-      "price_text": "4,250만원",
-      "first_registered_month": "2024년 04월",
-      "mileage_text": "23,042km",
-      "fuel_label": "하이브리드",
-      "trim_group": "아웃도어",
-      "selectable_option_names": [
-        "듀얼선루프",
-        "드라이브와이즈",
-        "HUD+빌트인캠2",
-        "모니터링팩",
-        "스마트커넥트",
-        "스타일"
-      ]
-    }
-  ],
+  "added": [],
+  "added_vehicles": [],
   "sold_out": [],
   "sold_out_vehicles": [],
   "reappeared": []
