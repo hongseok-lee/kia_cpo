@@ -1,12 +1,25 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-10-29T03:50:10.199152+00:00",
+  "scraped_at": "2026-10-29T10:38:32.841979+00:00",
   "total_rows": 58,
-  "available_count": 25,
-  "sold_out_count": 33,
+  "available_count": 24,
+  "sold_out_count": 34,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "326어7914"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "326어7914",
+      "product_id": "14253",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14253",
+      "price_text": "4,650만원",
+      "first_registered_month": "2024년 08월",
+      "mileage_text": "40,312km",
+      "fuel_label": "하이브리드",
+      "trim_group": "시그니처 그래비티"
+    }
+  ],
   "reappeared": []
 }
