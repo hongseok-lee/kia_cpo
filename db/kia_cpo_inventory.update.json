@@ -1,12 +1,36 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-11-03T02:28:53.949708+00:00",
+  "scraped_at": "2026-11-03T10:01:02.423906+00:00",
   "total_rows": 58,
-  "available_count": 23,
-  "sold_out_count": 35,
+  "available_count": 21,
+  "sold_out_count": 37,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [],
-  "sold_out_vehicles": [],
+  "sold_out": [
+    "251라7963",
+    "216마8250"
+  ],
+  "sold_out_vehicles": [
+    {
+      "plate_number": "251라7963",
+      "product_id": "14907",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=14907",
+      "price_text": "3,950만원",
+      "first_registered_month": "2024년 08월",
+      "mileage_text": "29,646km",
+      "fuel_label": "가솔린",
+      "trim_group": "시그니처"
+    },
+    {
+      "plate_number": "216마8250",
+      "product_id": "15041",
+      "detail_url": "https://cpo.kia.com/products/detail/?id=15041",
+      "price_text": "4,250만원",
+      "first_registered_month": "2024년 04월",
+      "mileage_text": "23,042km",
+      "fuel_label": "하이브리드",
+      "trim_group": "아웃도어"
+    }
+  ],
   "reappeared": []
 }
