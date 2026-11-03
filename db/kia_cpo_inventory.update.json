@@ -1,25 +1,12 @@
 {
   "path": "db/kia_cpo_inventory.csv",
-  "scraped_at": "2026-11-02T20:18:12.132402+00:00",
+  "scraped_at": "2026-11-03T02:28:53.949708+00:00",
   "total_rows": 58,
   "available_count": 23,
   "sold_out_count": 35,
   "added": [],
   "added_vehicles": [],
-  "sold_out": [
-    "282조9112"
-  ],
-  "sold_out_vehicles": [
-    {
-      "plate_number": "282조9112",
-      "product_id": "14522",
-      "detail_url": "https://cpo.kia.com/products/detail/?id=14522",
-      "price_text": "5,320만원",
-      "first_registered_month": "2025년 09월",
-      "mileage_text": "6,221km",
-      "fuel_label": "하이브리드",
-      "trim_group": "X-Line"
-    }
-  ],
+  "sold_out": [],
+  "sold_out_vehicles": [],
   "reappeared": []
 }
